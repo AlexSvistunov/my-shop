@@ -1,0 +1,30 @@
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product-list__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(184, 184, 184);
+    padding: 20px;
+}
+
+.product-list__title {
+    margin: 0;
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+
+.product-list__price {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.product-list__link {
+    position: absolute;
+    inset: 0;
+    
+}
