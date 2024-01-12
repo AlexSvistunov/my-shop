@@ -1,0 +1,20 @@
+.navigation__link {
+    padding: 15px 25px;
+}
+
+.navigation__link:hover {
+    background-color: rgb(112, 112, 253);
+    color: white;
+}
+
+
+.navigation__link:focus-visible {
+    background-color: rgba(1, 165, 235, 0.1);
+    outline: 2px solid rgb(179, 179, 227);
+}
+
+.navigation__link:active {
+    color: white;
+    background-color: rgb(61, 61, 243)
+}
+

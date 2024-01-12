@@ -1,0 +1,20 @@
+.basket-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    outline: none;
+}
+
+.basket-btn:hover svg {
+    fill: rgb(164, 99, 0);
+}
+
+.basket-btn:focus-visible {
+    background-color: rgba(230, 192, 135, 0.815);
+}
+
+.basket-btn svg {
+    width: 25px;
+    height: 25px;
+}

@@ -58,5 +58,10 @@ body {
       
 }
 
+.navigate--active {
+    border: 1px solid blue;
+    color: blue;
+}
+
 
 
