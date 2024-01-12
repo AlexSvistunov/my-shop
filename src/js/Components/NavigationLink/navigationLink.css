@@ -7,6 +7,11 @@
     color: white;
 }
 
+.navigation__link.navigation--active {
+    background-color: rgba(0, 0, 0, .7);
+    color: white;
+}
+
 
 .navigation__link:focus-visible {
     background-color: rgba(1, 165, 235, 0.1);

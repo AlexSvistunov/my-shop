@@ -6,7 +6,7 @@ export function getBasketBtn() {
     const basketBtn = document.createElement('a')
     basketBtn.href = '/basket'
     basketBtn.setAttribute('data-nav', 'true')
-    basketBtn.classList.add('basket-btn')
+    basketBtn.classList.add('basket-btn', 'navigation__link')
     basketBtn.innerHTML = basketSvg
 
     

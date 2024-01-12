@@ -13,21 +13,44 @@ const pageContainer = getPageContainer();
 
 export const router = new Navigo("/");
 
-router.on("/", async function () {
+const routerMain = '/'
+const routerCatalog = '/catalog'
+const routerOrder = '/order'
+const routerBasket = '/basket'
+const localHost = window.location.origin
+
+router.on(routerMain, async function () {
   pageContainer.innerHTML = "";
   const module = await import("./Pages/pages-main.js");
   const mainPage = module.getMainPage();
   pageContainer.append(mainPage);
+
+  const items = document.querySelectorAll(`[data-nav='true']`)
+  items.forEach(item => {
+    item.classList.remove('navigation--active')
+    if(item.href.slice(localHost.length) === routerMain) {
+      item.classList.add('navigation--active')
+    }
+  })
+
 });
 
-router.on("/catalog", async function () {
+router.on(routerCatalog, async function () {
   pageContainer.innerHTML = "";
   const module = await import("./Pages/pages-catalog.js");
   const catalogPage = module.getCatalogPage();
   pageContainer.append(catalogPage);
+
+  const items = document.querySelectorAll(`[data-nav='true']`)
+  items.forEach(item => {
+    item.classList.remove('navigation--active')
+    if(item.href.slice(localHost.length) === routerCatalog) {
+      item.classList.add('navigation--active')
+    }
+  })
 });
 
-router.on("/order", async function ({}) {
+router.on(routerOrder, async function ({}) {
   if (true) {
     router.navigate("/");
     return;
@@ -39,11 +62,19 @@ router.on("/order", async function ({}) {
   pageContainer.append(orderPage);
 });
 
-router.on("/basket", async function () {
+router.on(routerBasket, async function () {
   pageContainer.innerHTML = "";
   const module = await import("./Pages/pages-basket.js");
   const basketPage = module.getBasketPage();
   pageContainer.append(basketPage);
+
+  const items = document.querySelectorAll(`[data-nav='true']`)
+  items.forEach(item => {
+    item.classList.remove('navigation--active')
+    if(item.href.slice(localHost.length) === routerBasket) {
+      item.classList.add('navigation--active')
+    }
+  })
 });
 
 router.on("/product/:title", async function ({ data }) {
@@ -59,6 +90,8 @@ router.notFound(async() => {
   const notFoundPage = module.get404Page();
   pageContainer.append(notFoundPage);
 });
+
+// devide this code into functions, elements, components
 
 router.resolve();
 
