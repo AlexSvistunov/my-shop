@@ -51,10 +51,6 @@ router.on(routerCatalog, async function () {
 });
 
 router.on(routerOrder, async function ({}) {
-  if (true) {
-    router.navigate("/");
-    return;
-  }
 
   pageContainer.innerHTML = "";
   const module = await import("./Pages/pages-order.js");
@@ -66,7 +62,7 @@ router.on(routerBasket, async function () {
   pageContainer.innerHTML = "";
   const module = await import("./Pages/pages-basket.js");
   const basketPage = module.getBasketPage();
-  pageContainer.append(basketPage);
+  pageContainer.append(basketPage.page);
 
   const items = document.querySelectorAll(`[data-nav='true']`)
   items.forEach(item => {

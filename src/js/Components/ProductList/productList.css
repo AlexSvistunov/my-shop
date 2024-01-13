@@ -16,6 +16,12 @@
     -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
     -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
     box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+.catalog-list__item:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
 }
 
 .catalog-item__link {
@@ -41,3 +47,15 @@
     height: 250px;
 }
 
+.catalog-item__btn {
+    position: relative;
+    cursor: pointer;
+    z-index: 2;
+}
+
+@media (max-width: 1000px) {
+    .catalog-list {
+        grid-template-columns: repeat(8, 1fr);
+    }
+    
+}

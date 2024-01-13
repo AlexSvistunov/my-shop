@@ -14,8 +14,8 @@
 
 
 .navigation__link:focus-visible {
-    background-color: rgba(1, 165, 235, 0.1);
-    outline: 2px solid rgb(179, 179, 227);
+    /* background-color: rgba(1, 165, 235, 0.1); */
+    outline: 3px solid rgb(179, 179, 227);
 }
 
 .navigation__link:active {
