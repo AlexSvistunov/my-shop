@@ -38,7 +38,7 @@ router.on(routerMain, async function () {
 router.on(routerCatalog, async function () {
   pageContainer.innerHTML = "";
   const module = await import("./Pages/pages-catalog.js");
-  const catalogPage = module.getCatalogPage();
+  const catalogPage = await module.getCatalogPage();
   pageContainer.append(catalogPage);
 
   const items = document.querySelectorAll(`[data-nav='true']`)
@@ -77,7 +77,16 @@ router.on(routerBasket, async function () {
   })
 });
 
+// router.on("/product/:title", async function ({ data }) {
+//   console.log(data)
+//   pageContainer.innerHTML = "";
+//   const module = await import("./Pages/pages-product.js");
+//   const productPage = module.getProductPage(data.title);
+//   pageContainer.append(productPage);
+// });
+
 router.on("/product/:title", async function ({ data }) {
+  console.log(data)
   pageContainer.innerHTML = "";
   const module = await import("./Pages/pages-product.js");
   const productPage = module.getProductPage(data.title);
